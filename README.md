@@ -35,6 +35,7 @@ Pre-trained dehazing models can be downloaded at (put it in the folder 'test_mod
 You can run the **PSNRSSIM.py** for quantitative results
 ```
 python PSNRSSIM.py --gt_dir ./your_folder_name --result_dir ./your_folder_name
+```
 
 ## Datasets
 We release our training data(derived from Micosoft COCO)、SOTS and NTIRE data(hdf5 file) as following URL： 
