@@ -1,6 +1,7 @@
 from __future__ import division, absolute_import, print_function
 import sys
 import os
+import argparse
 import os.path
 import random
 import numpy as np
@@ -11,6 +12,10 @@ from numpy.lib.arraypad import _validate_lengths
 from scipy.ndimage import uniform_filter, gaussian_filter
 from decimal import Decimal
 from skimage import io
+parser.add_argument('--gt_dir', default='', help="path to GT images"))
+parser.add_argument('--result_dir', default='', help="path to dehazed images"))
+
+
 dtype_range = {np.bool_: (False, True),
 			   np.bool8: (False, True),
 			   np.uint8: (0, 255),
@@ -234,9 +239,7 @@ def compute_mssim(ref_im, res_im):
 	return np.mean(channels)
  
 
-gt_dir = "/data1/yudong/DCPDN/facades/reside_test/outdoor/SOTS_gt1/"
 
-result_dir = './result_cvpr18/image/keshan/'
 
 res_dir = gt_dir
 ref_dir = result_dir
