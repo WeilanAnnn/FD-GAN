@@ -233,11 +233,9 @@ def compute_mssim(ref_im, res_im):
 									 gaussian_weights=True, use_sample_covariance=False))
 	return np.mean(channels)
  
-# as per the metadata file, input and output directories are the arguments
-# [_, gt_dir, result_dir] = sys.argv
-#gt_dir = "/data1/yudong/DCPDN/facades/NTIRE_Test/NTIRE18_ALL/gt_ntire18all/"
+
 gt_dir = "/data1/yudong/DCPDN/facades/reside_test/outdoor/SOTS_gt1/"
-#gt_dir = "/data1/yudong/DCPDN/facades/reside_test/indoor/NYU_gt1/"
+
 result_dir = './result_cvpr18/image/keshan/'
 
 res_dir = gt_dir
@@ -269,5 +267,5 @@ psnr = Decimal(psnr).quantize(Decimal('0.0000'))
 mssim = np.mean(scores_ssim)
 mssim = Decimal(mssim).quantize(Decimal('0.0000'))
 print("\n psnr:\n", psnr,'\n compute ssim:\n',mssim)
-print(gt_dir)
+
 
