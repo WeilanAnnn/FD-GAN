@@ -39,7 +39,7 @@ python PSNRSSIM.py --gt_dir ./your_folder_name --result_dir ./your_folder_name
 ```
 
 ## Datasets
-We release our training datast(derived from Micosoft COCO)、RESIDE-SOTS and NTIRE datast(hdf5 file) as following URL： 
+We release our training datast(derived from Micosoft COCO)、RESIDE-SOTS and NTIRE dataset(hdf5 file) as following URL： 
 
 
 ## How to read the Hdf5 file
