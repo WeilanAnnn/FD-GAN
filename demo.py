@@ -86,29 +86,19 @@ for k, v in state_dict.items():
 netG.load_state_dict(new_state_dict)
 #netG.load_state_dict(state_dict)
 
-
 netG = nn.DataParallel(netG).cuda()
-
 
 netG.train()
 
-
-
 target= torch.FloatTensor(opt.batchSize, outputChannelSize, opt.imageSize, opt.imageSize)
 input = torch.FloatTensor(opt.batchSize, inputChannelSize, opt.imageSize, opt.imageSize)
-
-
-
 
 val_target= torch.FloatTensor(opt.valBatchSize, outputChannelSize, opt.imageSize, opt.imageSize)
 val_input = torch.FloatTensor(opt.valBatchSize, inputChannelSize, opt.imageSize, opt.imageSize)
 # label_d = torch.FloatTensor(opt.batchSize)
 
-
 target = torch.FloatTensor(opt.batchSize, outputChannelSize, opt.imageSize, opt.imageSize)
 input = torch.FloatTensor(opt.batchSize, inputChannelSize, opt.imageSize, opt.imageSize)
-
-
 
 val_target = torch.FloatTensor(opt.valBatchSize, outputChannelSize, opt.imageSize, opt.imageSize)
 val_input = torch.FloatTensor(opt.valBatchSize, inputChannelSize, opt.imageSize, opt.imageSize)
@@ -120,7 +110,6 @@ target = Variable(target, volatile=True)
 input = Variable(input,volatile=True)
 
 import time
-
 
 # NOTE training loop
 ganIterations = 0
