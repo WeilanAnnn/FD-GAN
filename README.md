@@ -28,7 +28,7 @@ python demo.py --dataroot ./facades/'your_folder_name' --netG ./testmodel/netG_e
 ```
 To obtain the best performance on synthetic and real-world datasets respectively, we provide two models from different  iterations in one  training procedure. In addition, please use netG.train() for testing since the batch for training is 1.
 
-Pre-trained dehazing models can be downloaded at (put it in the folder 'test_model'):
+Pre-trained dehazing models can be downloaded at (put it in the folder '**test_model**'):
 
 
 ## Metric
