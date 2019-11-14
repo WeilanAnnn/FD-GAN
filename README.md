@@ -29,6 +29,10 @@ python demo.py --dataroot ./facades/'your folder name' --netG ./testmodel/netG_e
 To obtain the best performance on synthetic and real-world datasets respectively, we provide two models from different  iterations in one  training procedure. In addition, please use netG.train() for testing since the batch for training is 1.
 
 Pre-trained dehazing models can be downloaded at (put it in the folder 'test_model'):
+## Metric
+You can run the **PSNRSSIM.py** for quantitative results
+```
+python PSNRSSIM.py --gt_dir ./your folder name --result_dir ./your folder name
 
 ## Datasets
 We release our training data(derived from Micosoft COCO)、SOTS and NTIRE data(hdf5 file) as following URL： 
