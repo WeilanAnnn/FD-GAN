@@ -10,3 +10,22 @@ In this paper, we propose a fully end-to-end algorithm FD-GAN for image dehazing
 1. Ubuntu 18.04
 2. Python 3
 3. NVIDIA GPU + CUDA CuDNN (CUDA 8.0)
+
+## Installation
+1. conda install pytorch=0.3.0 torchvision cuda80 -c pytorch
+2. Install python package:numpy,scipy,PIL,skimage
+
+## Demo using pre-trained model
+Since the proposed method uses hdf5 file to load the traning samples, the **generate_testsample.py** helps you to creat the testing or training sample yourself.
+
+If your images are real:
+```
+python demo.py --dataroot ./facades/'your folder name' --netG ./testmodel/netG_epoch_real.pth
+```
+If your images are synthetic:
+```
+python demo.py --dataroot ./facades/'your folder name' --netG ./testmodel/netG_epoch_synthetic.pth
+```
+To obtain the best performance on synthetic and real-world datasets respectively, we provide two models from different  iterations in one  training procedure. In addition, please use netG.train() for testing since the batch for training is 1.
+
+## Datasets
