@@ -31,6 +31,7 @@ parser.add_argument('--dataset', required=False,
 parser.add_argument('--valDataroot', required=False,default="", help='path to val dataset')
 parser.add_argument('--mode', type=str, default='B2A', help='B2A: facade, A2B: edges2shoes')
 parser.add_argument('--valBatchSize', type=int, default=1, help='input batch size')
+parser.add_argument('--batchSize', type=int, default=1, help='input batch size')
 parser.add_argument('--originalSize', type=int,
   default=1024, help='the height / width of the original input image')
 parser.add_argument('--imageSize', type=int,
@@ -71,11 +72,10 @@ outputChannelSize= opt.outputChannelSize
 
 netG = net.FDGAN()
 
-if opt.netG != '':
-  netG.load_state_dict(torch.load(opt.netG))
+
 
 # original saved file with DataParallel
-
+state_dict = torch.load(opt.netG)
 # create new OrderedDict that does not contain `module.`
 from collections import OrderedDict
 new_state_dict = OrderedDict()
@@ -87,8 +87,6 @@ netG.load_state_dict(new_state_dict)
 #netG.load_state_dict(state_dict)
 
 netG = nn.DataParallel(netG).cuda()
-
-netG.train()
 
 target= torch.FloatTensor(opt.batchSize, outputChannelSize, opt.imageSize, opt.imageSize)
 input = torch.FloatTensor(opt.batchSize, inputChannelSize, opt.imageSize, opt.imageSize)
@@ -141,7 +139,7 @@ for epoch in range(1):
     iteration=iteration+1
 	#
     index2 = 0
-    directory='./result_AAAI20/'
+    directory='./result_AAAI20/image/'
     if not os.path.exists(directory):
         os.makedirs(directory)
     for i in range(opt.valBatchSize):
