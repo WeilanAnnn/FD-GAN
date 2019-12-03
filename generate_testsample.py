@@ -33,11 +33,11 @@ for gt,haze in data:
     haze_image = np.float32(io.imread(haze_path + haze))/255.0
    
     f = h5py.File("your dataroot"+str(i)+'.h5', 'w')
-    f.create_dataset('gt', data=gt_imgae)
+    f.create_dataset('gt', data=gt_image)
    
-    f.create_dataset('haze', data=haze_imgae)
+    f.create_dataset('haze', data=haze_image)
 
     i=i+1
 
     print(i)
- print('end')
+print('end')
