@@ -17,7 +17,7 @@ In this paper, we propose a fully end-to-end algorithm FD-GAN for image dehazing
 
 ## Installation
 1. conda install pytorch=0.3.0 torchvision cuda80 -c pytorch
-2. Install python package:numpy,scipy,PIL,skimage
+2. Install python package:numpy,scipy,PIL,skimage,h5py
 
 ## Demo using pre-trained model
 Since the proposed method uses hdf5 file to load the traning samples, the **generate_testsample.py** helps you to creat the testing or training sample yourself.
