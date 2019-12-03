@@ -12,9 +12,10 @@ from numpy.lib.arraypad import _validate_lengths
 from scipy.ndimage import uniform_filter, gaussian_filter
 from decimal import Decimal
 from skimage import io
-parser.add_argument('--gt_dir', default='', help="path to GT images"))
-parser.add_argument('--result_dir', default='', help="path to dehazed images"))
-
+parser = argparse.ArgumentParser()
+parser.add_argument('--gt_dir', default='', help="path to GT images")
+parser.add_argument('--result_dir', default='', help="path to dehazed images")
+opt = parser.parse_args()
 
 dtype_range = {np.bool_: (False, True),
 			   np.bool8: (False, True),
@@ -224,14 +225,14 @@ def _open_img_ssim(img_p):
 
 def compute_psnr(ref_im, res_im):
 	return output_psnr_mse(
-		_open_img(os.path.join(result_dir, ref_im)),
-		_open_img(os.path.join(gt_dir, res_im))
+		_open_img(os.path.join(ref_dir, ref_im)),
+		_open_img(os.path.join(res_dir, res_im))
 	)
 
 
 def compute_mssim(ref_im, res_im):
-	ref_img = _open_img_ssim(os.path.join(result_dir, ref_im))
-	res_img = _open_img_ssim(os.path.join(gt_dir, res_im))
+	ref_img = _open_img_ssim(os.path.join(ref_dir, ref_im))
+	res_img = _open_img_ssim(os.path.join(res_dir , res_im))
 	channels = []
 	for i in range(3):
 		channels.append(compare_ssim(ref_img[:, :, i], res_img[:, :, i],
@@ -241,8 +242,8 @@ def compute_mssim(ref_im, res_im):
 
 
 
-res_dir = gt_dir
-ref_dir = result_dir
+res_dir = opt.gt_dir
+ref_dir = opt.result_dir
 
 runtime = -1
 cpu = -1
@@ -253,7 +254,7 @@ ref_pngs = sorted([p for p in os.listdir(ref_dir) if p.lower().endswith('png')])
 res_pngs = sorted([p for p in os.listdir(res_dir) if p.lower().endswith('png')])
 # if not (len(ref_pngs)==5 and len(res_pngs)==5):
 # raise Exception('Expected 5 .png images, got %d'%len(res_pngs))
-print(result_dir)
+
 scores = []
 scores_ssim = []
 data = zip(ref_pngs, res_pngs)
@@ -270,5 +271,6 @@ psnr = Decimal(psnr).quantize(Decimal('0.0000'))
 mssim = np.mean(scores_ssim)
 mssim = Decimal(mssim).quantize(Decimal('0.0000'))
 print("\n psnr:\n", psnr,'\n compute ssim:\n',mssim)
+
 
 
