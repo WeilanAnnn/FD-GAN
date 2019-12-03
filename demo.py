@@ -151,3 +151,4 @@ for epoch in range(1):
         vutils.save_image(x_hat2, directory+str(index)+'.png', normalize=True, scale_each=False)
         
 # trainLogger.close()
+
