@@ -42,7 +42,7 @@ python PSNRSSIM.py --gt_dir ./your_folder_name --result_dir ./your_folder_name
 ```
 
 ## Datasets
-You can download our synthetic test-data: RESIDE-SOTS and NTIRE dataset(hdf5 file) as following URL： 
+ You can download our synthetic test-data: RESIDE-SOTS and NTIRE dataset(strored in Hdf5 file and PNG) as following URL： 
 https://pan.baidu.com/s/1oZwVX8FWFNzRaY_JyVB1pA
 
 https://pan.baidu.com/s/1U6RjKF-UYXvBIHDt7SU0Ww
