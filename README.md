@@ -66,4 +66,4 @@ plt.show()
 
 
 ## Acknowledgments
-Thank all co-authors deeply!
+Thank all co-authors so much!
