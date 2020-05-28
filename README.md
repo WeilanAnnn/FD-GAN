@@ -5,7 +5,7 @@
 [Yu Dong](https://github.com/WeilanAnnn).  [Yihao Liu](https://github.com/DoctorYy)
 
 <center >
-    <img src= "https://github.com/WeilanAnnn/FD-GAN/blob/master/facades/Our_network.png" />
+    <img src= "https://github.com/WeilanAnnn/FD-GAN/blob/master/facades/network.png" />
 </center>
 
 
