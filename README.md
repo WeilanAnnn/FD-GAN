@@ -1,6 +1,6 @@
 # FD-GAN
 ## FD-GAN: Generative adversarial Networks with Fusion-discriminator for Single Image Dehazing(AAAI'20)
-[PAPER](https://aaai.org/Papers/AAAI/2020GB/AAAI-DongY.3934.pdf)
+[PAPER](https://arxiv.org/abs/2001.06968)
 
 [Yu Dong](https://github.com/WeilanAnnn).  [Yihao Liu](https://github.com/DoctorYy)
 
