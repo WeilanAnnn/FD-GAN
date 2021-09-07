@@ -39,6 +39,8 @@ To obtain the best performance on synthetic and real-world datasets respectively
 
 Pre-trained dehazing models can be downloaded at (put it in the folder '**test_model**'):
 https://pan.baidu.com/s/10IgnZ0YiGsUxrgxoQQhsOg
+or
+https://drive.google.com/drive/folders/1Jkf9NgBrGHErQMwFN7wv1QY_vPYUt19r?usp=sharing
 
 ## Metric
 You can run the **PSNRSSIM.py** for quantitative results
